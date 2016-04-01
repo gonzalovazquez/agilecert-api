@@ -2,7 +2,6 @@
 
 const Hapi = require('hapi');
 const Good = require('good');
-const Boom = require('boom');
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -16,49 +15,50 @@ const username = process.env.USER;
 const password = process.env.PASSWORD;
 const database = process.env.DATABASE;
 
-console.log(process.env.USER, process.env.PASSWORD, process.env.DATABASE);
-
 // MongoDB connection
 const dbOpts = {
-  "url" : "mongodb://" + username + ":" + password + "@ds011810.mlab.com:11810/" + database,
-  "settings": {
-    "db": {
-      "native_parser": false
+    'url' : 'mongodb://' + username + ':' + password + '@ds011810.mlab.com:11810/' + database,
+    'settings': {
+        'db': {
+            'native_parser': false
+        }
     }
-  }
 };
 
 server.register({
-  register: require('hapi-mongodb'),
-  options: dbOpts
-}, function (err) {
+    register: require('hapi-mongodb'),
+    options: dbOpts
+}, (err) => {
+
     if (err) {
-      console.error(err);
-      throw err;
+        console.error(err);
+        throw err;
     }
 });
 
 // Fetch a questions
 server.route( {
-  "method": "GET",
-  "path": "/allquestions",
-  config: {
-			handler: (request, reply) => {
-				var db = request.server.plugins['hapi-mongodb'].db;
-				reply(db.collection('questions').find({}).toArray());	//filter only with ID + TITLE
-			},
-			cors: true
-		}
+    'method': 'GET',
+    'path': '/allquestions',
+    config: {
+        handler: (request, reply) => {
+
+            const db = request.server.plugins['hapi-mongodb'].db;
+            reply(db.collection('questions').find({}).toArray());	//filter only with ID + TITLE
+        },
+        cors: true
+    }
 });
 
 
 // Default route
 server.route({
-  method: 'GET',
-  path: '/',
-  handler: function (request, reply) {
-      reply('Hello, world!');
-  }
+    method: 'GET',
+    path: '/',
+    handler: function (request, reply) {
+
+        reply('Hello, world!');
+    }
 });
 
 
@@ -74,6 +74,7 @@ server.register(require('inert'), (err) => {
         method: 'GET',
         path: '/say',
         handler: function (request, reply) {
+
             reply.file('./public/hello.html');
         }
     });
@@ -100,7 +101,7 @@ server.register({
     server.start((err) => {
 
         if (err) {
-           throw err;
+            throw err;
         }
         server.log('info', 'Server running at: ' + server.info.uri);
     });
