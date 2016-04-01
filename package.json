@@ -11,9 +11,16 @@
     "type": "git",
     "url": "git+https://github.com/gonzalovazquez/agilecert-api.git"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "lab": "^10.3.0"
+  },
   "dependencies": {
-    "hapi": "^13.2.2"
+    "boom": "^3.1.2",
+    "good": "^6.6.0",
+    "good-console": "^5.3.1",
+    "hapi": "^13.2.2",
+    "hapi-mongodb": "^6.0.0",
+    "inert": "^3.2.0"
   },
   "bugs": {
     "url": "https://github.com/gonzalovazquez/agilecert-api/issues"
@@ -24,7 +31,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./bin/_lab -fL -t 100 -m 3000"
   },
   "license": "ISC"
 }
