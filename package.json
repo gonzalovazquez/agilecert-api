@@ -5,17 +5,26 @@
   "description": "An api to fetch questions for the Agile Cert App.",
   "private": true,
   "contributors": [
-    {
-      "name": "Gonzalo Vazquez",
-      "email": "gonzalo.segura1@gmail.com"
-    }
+    "Gonzalo Vazquez <gonzalo.segura1@gmail.com>"
   ],
   "repository": {
     "type": "git",
-
-    "url": "https://github.com/gonzalovazquez/agilecert-api.git"
-
+    "url": "git+https://github.com/gonzalovazquez/agilecert-api.git"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {},
+  "dependencies": {
+    "hapi": "^13.2.2"
+  },
+  "bugs": {
+    "url": "https://github.com/gonzalovazquez/agilecert-api/issues"
+  },
+  "homepage": "https://github.com/gonzalovazquez/agilecert-api#readme",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
 }
