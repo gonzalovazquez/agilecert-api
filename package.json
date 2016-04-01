@@ -1,0 +1,21 @@
+{
+  "name": "agilecert-api",
+  "version": "0.0.1",
+  "author": "Gonzalo Vazquez",
+  "description": "An api to fetch questions for the Agile Cert App.",
+  "private": true,
+  "contributors": [
+    {
+      "name": "Gonzalo Vazquez",
+      "email": "gonzalo.segura1@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    
+    "url": "https://github.com/gonzalovazquez/agilecert-api.git"
+    
+  },
+  "devDependencies": {
+  }
+}
