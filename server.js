@@ -15,6 +15,8 @@ const username = process.env.USER;
 const password = process.env.PASSWORD;
 const database = process.env.DATABASE;
 
+server.log('Connected with username' + username + 'to database ' + DATABASE);
+
 // MongoDB connection
 const dbOpts = {
     'url' : 'mongodb://' + username + ':' + password + '@ds011810.mlab.com:11810/' + database,
