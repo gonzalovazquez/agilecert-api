@@ -7,7 +7,7 @@ const Good = require('good');
 const server = new Hapi.Server();
 server.connection({
     host: 'localhost',
-    port: 8000
+    port: 5000
 });
 
 // Database variables
