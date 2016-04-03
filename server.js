@@ -128,7 +128,7 @@ server.register({
         if (err) {
             throw err;
         }
-        server.log('Connected with username' + username + 'to database ' + database);
+        server.log('Connected to database ' + dbOpts.url);
         server.log('info', 'Server running at: ' + server.info.uri);
     });
 });
