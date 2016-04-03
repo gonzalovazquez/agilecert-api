@@ -39,12 +39,27 @@ server.register({
 // Fetch a questions
 server.route( {
     'method': 'GET',
-    'path': '/allquestions',
+    'path': '/questions',
     config: {
         handler: (request, reply) => {
 
             const db = request.server.plugins['hapi-mongodb'].db;
             reply(db.collection('questions').find({}).toArray());	//filter only with ID + TITLE
+        },
+        cors: true
+    }
+});
+
+// Fetch question by ID
+server.route( {
+    'method': 'GET',
+    'path': '/questions/{id}',
+    config: {
+        handler: (request, reply) => {
+
+            const db = request.server.plugins['hapi-mongodb'].db;
+            const ObjectID = request.server.plugins['hapi-mongodb'].ObjectID;
+            reply(db.collection('questions').findOne({ '_id': new ObjectID(request.params.id) }));
         },
         cors: true
     }
