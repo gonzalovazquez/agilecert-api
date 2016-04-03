@@ -15,7 +15,6 @@ const username = process.env.USER;
 const password = process.env.PASSWORD;
 const database = process.env.DATABASE;
 
-server.log('Connected with username' + username + 'to database ' + database);
 
 // MongoDB connection
 const dbOpts = {
@@ -129,6 +128,7 @@ server.register({
         if (err) {
             throw err;
         }
+        server.log('Connected with username' + username + 'to database ' + database);
         server.log('info', 'Server running at: ' + server.info.uri);
     });
 });
