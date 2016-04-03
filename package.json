@@ -12,8 +12,6 @@
     "url": "git+https://github.com/gonzalovazquez/agilecert-api.git"
   },
   "devDependencies": {
-    "code": "^2.1.1",
-    "lab": "^10.3.0"
   },
   "dependencies": {
     "boom": "^3.1.2",
@@ -32,7 +30,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/lab/bin/lab -fL -t 100 -m 3000"
+    "test": ""
   },
   "license": "ISC"
 }

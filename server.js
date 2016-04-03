@@ -36,7 +36,13 @@ server.register({
     }
 });
 
-// Fetch a questions
+/**
+ * @api {get} /questions/ Request all questions
+ * @apiName GetQuestion
+ * @apiGroup Questions
+ *
+ * @apiSuccess {Object} questions Returns all the questions
+ */
 server.route( {
     'method': 'GET',
     'path': '/questions',
@@ -50,7 +56,13 @@ server.route( {
     }
 });
 
-// Fetch question by ID
+/**
+ * @api {get} /questions/:id Request one question
+ * @apiName GetQuestion
+ * @apiGroup Questions
+ *
+ * @apiSuccess {Object} questions Returns all the questions
+ */
 server.route( {
     'method': 'GET',
     'path': '/questions/{id}',
@@ -65,18 +77,15 @@ server.route( {
     }
 });
 
-
 // Default route
 server.route({
     method: 'GET',
     path: '/',
     handler: function (request, reply) {
 
-        reply('Hello, world!');
+        reply('API is available');
     }
 });
-
-
 
 // Static pages and content
 server.register(require('inert'), (err) => {
@@ -87,7 +96,7 @@ server.register(require('inert'), (err) => {
 
     server.route({
         method: 'GET',
-        path: '/say',
+        path: '/hello',
         handler: function (request, reply) {
 
             reply.file('./public/hello.html');

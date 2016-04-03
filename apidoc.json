@@ -1,0 +1,14 @@
+{
+  "name": "Agile Cert API",
+  "version": "1.0.0",
+  "description": "apiDoc example project",
+  "title": "Custom apiDoc browser title",
+  "url": "https://api.github.com/v1",
+  "order": [
+    "GetQuestion"
+  ],
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}
